@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Type__c</fullName>
+    <label>Request Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Access Request</fullName>
+                <default>false</default>
+                <label>Access Request</label>
+            </value>
+            <value>
+                <fullName>Email Issue</fullName>
+                <default>false</default>
+                <label>Email Issue</label>
+            </value>
+            <value>
+                <fullName>ID Card</fullName>
+                <default>false</default>
+                <label>ID Card</label>
+            </value>
+            <value>
+                <fullName>Laptop Issue</fullName>
+                <default>false</default>
+                <label>Laptop Issue</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Payroll</fullName>
+                <default>false</default>
+                <label>Payroll</label>
+            </value>
+            <value>
+                <fullName>Software Installation</fullName>
+                <default>false</default>
+                <label>Software Installation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location__c</fullName>
+    <label>Location</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Jaipur</fullName>
+                <default>true</default>
+                <label>Jaipur</label>
+            </value>
+            <value>
+                <fullName>Ajmer</fullName>
+                <default>false</default>
+                <label>Ajmer</label>
+            </value>
+            <value>
+                <fullName>Pune</fullName>
+                <default>false</default>
+                <label>Pune</label>
+            </value>
+            <value>
+                <fullName>Nagpur</fullName>
+                <default>false</default>
+                <label>Nagpur</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,213 @@
+<template>
+    <lightning-card title="Employee Portal" icon-name="standard:employee">
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={employees}>
+                <template for:each={employees} for:item="employee">
+
+                    <div key={employee.Id} class="slds-box slds-m-bottom_medium">
+
+                        <h2 class="slds-text-heading_medium">
+                            {employee.Name}
+                        </h2>
+
+                        <p class="slds-m-top_small">
+                            <strong>Employee ID: </strong>
+                            {employee.Employee_ID__c}
+                        </p>
+
+                        <p>
+                            <strong>Email: </strong>
+                            {employee.Email__c}
+                        </p>
+
+                        <p>
+                            <strong>Department: </strong>
+                            {employee.Department__c}
+                        </p>
+
+                        <p>
+                            <strong>Designation: </strong>
+                            {employee.Designation__c}
+                        </p>
+
+                        <p>
+                            <strong>Phone: </strong>
+                            {employee.Phone__c}
+                        </p>
+
+                        <p>
+                            <strong>Location: </strong>
+                            {employee.Location__c}
+                        </p>
+
+                        <p>
+                            <strong>Status: </strong>
+                            {employee.Status__c}
+                        </p>
+
+                    </div>
+
+                </template>
+            </template>
+
+            <template if:true={error}>
+                <p>
+                    Error loading employee information.
+                </p>
+            </template>
+
+        </div>
+
+        <!-- Onboarding Tasks Section -->
+        <div class="slds-p-around_medium">
+
+            <h1 class="slds-text-heading_large">
+                Onboarding Tasks
+            </h1>
+
+            <template if:true={onboardingTasks}>
+
+                <template for:each={onboardingTasks} for:item="task">
+
+                    <div key={task.Id} class="slds-box slds-m-top_medium">
+
+                        <h2 class="slds-text-heading_medium">
+                            {task.Task_Name__c}
+                        </h2>
+
+                        <lightning-combobox label="Status" value={task.Status__c} options={taskStatusOptions}
+                            data-id={task.Id} onchange={handleTaskStatusChange}>
+                        </lightning-combobox>
+
+                        <p>
+                            <strong>Priority: </strong>
+                            {task.Priority__c}
+                        </p>
+
+                        <p>
+                            <strong>Due Date: </strong>
+                            {task.Due_Date__c}
+                        </p>
+
+                        <p>
+                            <strong>Completion Date: </strong>
+                            {task.Completion_Date__c}
+                        </p>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+            <template if:true={taskError}>
+                <p>
+                    Error loading onboarding tasks.
+                </p>
+            </template>
+
+        </div>
+
+        <!-- Create Service Request Section -->
+        <div class="slds-p-around_medium">
+
+            <h1 class="slds-text-heading_large">
+                Create Service Request
+            </h1>
+
+            <!-- Request Name -->
+            <lightning-input label="Request Name" name="requestName" value={requestName} onchange={handleInputChange}>
+            </lightning-input>
+
+            <!-- Employee -->
+            <lightning-combobox label="Employee" name="employee" value={selectedEmployeeId} options={employeeOptions}
+                onchange={handleInputChange}>
+            </lightning-combobox>
+
+            <!-- Request Type -->
+            <lightning-combobox label="Request Type" name="requestType" value={requestType} options={requestTypeOptions}
+                onchange={handleInputChange}>
+
+            </lightning-combobox>
+
+            <!-- Description -->
+            <lightning-textarea label="Description" name="description" value={description} onchange={handleInputChange}>
+            </lightning-textarea>
+
+            <!-- Priority -->
+            <lightning-combobox label="Priority" name="priority" value={priority} options={priorityOptions}
+                onchange={handleInputChange}>
+            </lightning-combobox>
+
+            <!-- Create Button -->
+            <div class="slds-m-top_medium">
+                <lightning-button label="Create Service Request" variant="brand" onclick={handleCreateRequest}>
+                </lightning-button>
+            </div>
+
+        </div>
+
+        <!-- Service Requests Section -->
+        <div class="slds-p-around_medium">
+
+            <h1 class="slds-text-heading_large">
+                Service Requests
+            </h1>
+
+            <template if:true={serviceRequests}>
+
+                <template for:each={serviceRequests} for:item="request">
+
+                    <div key={request.Id} class="slds-box slds-m-top_medium">
+
+                        <h2 class="slds-text-heading_medium">
+                            {request.Name}
+                        </h2>
+
+                        <p class="slds-m-top_small">
+                            <strong>Request Number: </strong>
+                            {request.Request_Number__c}
+                        </p>
+
+                        <p>
+                            <strong>Request Type: </strong>
+                            {request.Request_Type__c}
+                        </p>
+
+                        <p>
+                            <strong>Description: </strong>
+                            {request.Description__c}
+                        </p>
+
+                        <p>
+                            <strong>Priority: </strong>
+                            {request.Priority__c}
+                        </p>
+
+                        <lightning-combobox label="Status" value={request.Status__c} options={statusOptions}
+                            data-id={request.Id} onchange={handleStatusChange}>
+                        </lightning-combobox>
+
+                        <p>
+                            <strong>Resolution Date: </strong>
+                            {request.Resolution_Date__c}
+                        </p>
+
+                    </div>
+
+                </template>
+
+            </template>
+
+            <template if:true={requestError}>
+                <p>
+                    Error loading service requests.
+                </p>
+            </template>
+
+        </div>
+
+    </lightning-card>
+</template>

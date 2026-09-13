@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Designation__c</fullName>
+    <label>Designation</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Salesforce Developer</fullName>
+                <default>true</default>
+                <label>Salesforce Developer</label>
+            </value>
+            <value>
+                <fullName>Business Analyst</fullName>
+                <default>false</default>
+                <label>Business Analyst</label>
+            </value>
+            <value>
+                <fullName>Project Manager</fullName>
+                <default>false</default>
+                <label>Project Manager</label>
+            </value>
+            <value>
+                <fullName>HR Executive</fullName>
+                <default>false</default>
+                <label>HR Executive</label>
+            </value>
+            <value>
+                <fullName>HR Manager</fullName>
+                <default>false</default>
+                <label>HR Manager</label>
+            </value>
+            <value>
+                <fullName>Sales Executive</fullName>
+                <default>false</default>
+                <label>Sales Executive</label>
+            </value>
+            <value>
+                <fullName>Support Executive</fullName>
+                <default>false</default>
+                <label>Support Executive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
