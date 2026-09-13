@@ -1,18 +1,38 @@
-# Salesforce DX Project: Next Steps
+# Employee Service & Onboarding Management System
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A Salesforce application for managing employee information, onboarding tasks, and employee service requests.
 
-## How Do You Plan to Deploy Your Changes?
+## Features
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+- Employee management using a custom `Employee__c` object
+- Onboarding task tracking using `Onboarding_Task__c`
+- Service request management using `Service_Request__c`
+- Create service requests from an LWC portal
+- Update service request status from the portal
+- Update onboarding task status from the portal
+- Automatically set onboarding completion date when a task is completed
+- Record-triggered Flow for creating an onboarding task when an employee is created
+- Apex controller with SOQL, record creation, and record updates
 
-## Configure Your Salesforce DX Project
+## Technologies
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+- Salesforce
+- Lightning Web Components (LWC)
+- Apex
+- SOQL
+- Salesforce Flow
+- Custom Objects & Fields
+- Salesforce DX / Salesforce CLI
 
-## Read All About It
+## Project Structure
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+```text
+force-app/main/default/
+├── classes/
+│   └── EmployeePortalController.cls
+├── lwc/
+│   └── employeePortal/
+└── objects/
+    ├── Employee__c/
+    ├── Onboarding_Task__c/
+    └── Service_Request__c/
